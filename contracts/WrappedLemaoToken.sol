@@ -28,5 +28,6 @@ contract WrappedLemaoToken is ERC20 {
 
     function withdrawLemao(uint256 _amount) external {
         _burn(msg.sender, _amount);
+        transfer(msg.sender, _amount);
     }
 }
