@@ -12,25 +12,17 @@ contract LemaoToken is ERC20 {
         i_owner = msg.sender;
     }
 
-    function transferLemao(address _to, uint256 _amount) external {
-        _calcualteFee(_to, _amount);
-    }
+    function _transfer(
+        address from,
+        address to,
+        uint256 amount
+    ) internal virtual override {
+        // calculates 8% as transfer fee
+        uint256 fee = (8 * amount) / 100;
+        // getting the remainingAmount after removing the transfer feee
+        uint256 remainingAmount = amount - fee;
 
-    function _calcualteFee(address _to, uint256 _amount) internal {
-        require(_amount > 0, "Zero Amount");
-        require(_to != address(0), "Not a Valid Address");
-
-        // fee = 8% of amount
-        uint256 fee = (8 * _amount) / 100;
-
-        uint256 remainingAmount = _amount - fee;
-
-        // transfer fee to the owner of the contract address
-        bool successFee = transfer(i_owner, fee);
-        require(successFee, "Fee: Transfer Failed");
-
-        // transfer the remaining amount to the receiver address
-        bool success = transfer(_to, remainingAmount);
-        require(success, "RemainingAmount: Transfer Failed");
+        super._transfer(from, to, remainingAmount);
+        super._transfer(from, i_owner, fee);
     }
 }

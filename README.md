@@ -2,10 +2,10 @@
 
 ## Description
 
-[Lemao](https://sepolia.etherscan.io/address/0x8c61875107911Df94FC3D1F8BB69FCEDf825B5D8#code) contract is an ERC20 Token that charges 8% fee on transfers ie it charges the user 8% fee anytime they want to transfer Lemao token (LMA) to another user.
+[Lemao](https://sepolia.etherscan.io/address/0x557d60754DC3f58bD47825ac4FeB5Ea8B1930fB7#code) contract is an ERC20 Token that charges 8% fee on transfers ie it charges the user 8% fee anytime they want to transfer Lemao token (LMA) to another user.
 
 - On calling the transfer() 8% fee is charged and paid to the owner address.
-  [WrappedLemao](https://sepolia.etherscan.io/address/0xD06BfF77CcDd12B4edffd86a46BF30237ea8bfDa#code) Receipt contract that wraps the Lemao token. It accepts only Lemao tokens
+  [WrappedLemao](https://sepolia.etherscan.io/address/0xd615dbf20dA2C7E83f5D1AD3e5f0E0535E23743B#code) Receipt contract that wraps the Lemao token. It accepts only Lemao tokens
   It has two main functions:
 - depositLemao()
 - withdrawLemao()
@@ -19,8 +19,8 @@ For users to get their Lemao tokens back, they deposit their WrappedLemao tokens
 
 ### LemaoToken Contract Address
 
-https://sepolia.etherscan.io/address/0x8c61875107911Df94FC3D1F8BB69FCEDf825B5D8#code
+https://sepolia.etherscan.io/address/0x557d60754DC3f58bD47825ac4FeB5Ea8B1930fB7#code
 
 ### WrappedLemaoToken Contract Address
 
-https://sepolia.etherscan.io/address/0xD06BfF77CcDd12B4edffd86a46BF30237ea8bfDa#code
+https://sepolia.etherscan.io/address/0xd615dbf20dA2C7E83f5D1AD3e5f0E0535E23743B#code

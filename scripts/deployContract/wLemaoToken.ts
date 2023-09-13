@@ -1,8 +1,11 @@
 import { ethers, network } from "hardhat";
+import { LEMAOTOKEN_ADDRESS } from "../contractAddress/address";
 const { verify } = require("../../utils/verify");
 
 async function main() {
-  const wLemaoTokenContract = await ethers.deployContract("WrappedLemaoToken");
+  const wLemaoTokenContract = await ethers.deployContract("WrappedLemaoToken", [
+    LEMAOTOKEN_ADDRESS,
+  ]);
   await wLemaoTokenContract.waitForDeployment();
 
   console.log("============DEPLOYING WRAPPEDLEMAOTOKEN CONTRACT=============");
@@ -20,7 +23,7 @@ async function main() {
     //wait for 10 block confirmations before verifying the transaction
     // @ts-ignore
     await wLemaoTokenContract.waitForDeployment(10);
-    await verify(wLemaoTokenContract.target, []);
+    await verify(wLemaoTokenContract.target, [LEMAOTOKEN_ADDRESS]);
   }
 }
 
