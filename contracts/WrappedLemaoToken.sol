@@ -34,6 +34,6 @@ contract WrappedLemaoToken is ERC20 {
         require(balanceOf(msg.sender) >= _amount, "Insufficient Balance");
 
         _burn(msg.sender, _amount);
-        transfer(msg.sender, _amount);
+        LemaoToken.transfer(msg.sender, _amount);
     }
 }

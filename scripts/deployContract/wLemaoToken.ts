@@ -1,5 +1,5 @@
 import { ethers, network } from "hardhat";
-import { LEMAOTOKEN_ADDRESS } from "../contractAddress/address";
+import { LEMAOTOKEN_ADDRESS } from "../addresses/address";
 const { verify } = require("../../utils/verify");
 
 async function main() {

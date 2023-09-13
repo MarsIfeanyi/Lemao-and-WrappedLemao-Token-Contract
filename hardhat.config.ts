@@ -21,7 +21,7 @@ const config: HardhatUserConfig = {
     hardhat: {
       forking: {
         // @ts-ignore
-        url: ETH_MAINNET_RPC_URL,
+        url: SEPOLIA_RPC_URL,
       },
     },
 
